@@ -57,5 +57,12 @@ export class CarsService {
         })
         return carDb
     }
+    public delete(id: string){
+        this.findOne(id);
+        
+        this.cars = this.cars.filter(car => car.id !== id);
+        
+        return "Se ha eliminado el carro";
+    }
 
 }
