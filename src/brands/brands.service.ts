@@ -7,12 +7,12 @@ import { randomUUID } from 'crypto';
 @Injectable()
 export class BrandsService {
   private brands: Brand[] = [
-    {
-      id: randomUUID(),
-      name: 'Toyota',
-      createdAt: new Date().getTime()
+    // {
+    //   id: randomUUID(),
+    //   name: 'Toyota',
+    //   createdAt: new Date().getTime()
 
-    }
+    // }
   ]
 
   create(createBrandDto: CreateBrandDto) {
@@ -52,4 +52,8 @@ export class BrandsService {
     this.findOne(id)
     this.brands = this.brands.filter(brand => brand.id !== id)
   }
+
+  fillBrandsWithSeedData(brands: Brand[]){
+    this.brands = brands;
+}
 }
